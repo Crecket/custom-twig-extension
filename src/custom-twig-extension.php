@@ -18,7 +18,10 @@ class custom_twig_extension extends Twig_Extension{
             'pseudoBytes' => new Twig_Function_Method($this, 'pseudoBytes'),
             'randomHex' => new Twig_Function_Method($this, 'randomHex'),
             'randomInt' => new Twig_Function_Method($this, 'randomInt'),
-            'randomString' => new Twig_Function_Method($this, 'randomString')
+            'randomString' => new Twig_Function_Method($this, 'randomString'),
+            'wordwrap' => new Twig_Function_Method($this, 'wordwrap', array(
+                'is_safe' => array('html')
+            )),
         );
         return $funcHolder;
     }
@@ -87,14 +90,14 @@ class custom_twig_extension extends Twig_Extension{
         return \implode($stringArr);
     }
 
-
+    public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
+        return wordwrap($str, $len, $limiter, $cut);
+    }
 
     public function getFilters() {
         return array(
             'json_decode' => new Twig_Filter_Method($this, 'jsonDecode'),
-            'wordwrap' => new Twig_Function_Method($this, 'wordwrap', array(
-                'is_safe' => array('html')
-            )),
+
         );
     }
 
@@ -102,7 +105,5 @@ class custom_twig_extension extends Twig_Extension{
         return json_decode($str, true);
     }
 
-    public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
-        return wordwrap($str, $len, $limiter, $cut);
-    }
+
 }

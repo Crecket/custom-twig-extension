@@ -40,6 +40,20 @@ Quick example:
 
 ## List
 
+#### Functions
+1. md5(password)
+2. password_hash(password)
+3. phpinfo()
+4. print_r(array)
+5. pseudoBytes(length)
+6. randomHex(length)
+7. randomInt(length)
+8. randomString(length)
+9. wordwrap(string, length, limiter = "\n", cut)
+
+#### Filters
+1. json_decode
+
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
