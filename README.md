@@ -35,7 +35,6 @@ Here I'll be adding my custom twig extensions
 
 
 - Print_r
-
 ```
 {{ print_r(array) }}
 ``` 
@@ -44,6 +43,12 @@ Here I'll be adding my custom twig extensions
 ```
 {{ some_variable|json_decode }}
 ```
+
+- wordwrap($string, $length, $limiter, $cut)
+```
+{{ wordwrap('This is some text that will get cut off at 20 characters.', 20, "\n<br>", true) }}
+```
+
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
