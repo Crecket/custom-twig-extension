@@ -14,6 +14,7 @@ Here I'll be adding my custom twig extensions
 
 #### Functions
 1. Print_r with \<pre> tags
+2. Custom wordwrap
 
 #### Filters
 1. Json_decode filter

@@ -7,8 +7,12 @@ class custom_twig_extension extends Twig_Extension
 
     public function getFunctions(){
         return array(
-            'print_r' => new Twig_Function_Method($this, 'print_r'),
-
+            'print_r' => new Twig_Function_Method($this, 'print_r', array(
+                'is_safe' => array('html')
+            )),
+            'wordwrap' => new Twig_Function_Method($this, 'wordwrap', array(
+                'is_safe' => array('html')
+            ))
         );
     }
     public function getFilters() {
@@ -22,9 +26,11 @@ class custom_twig_extension extends Twig_Extension
     }
 
     public function print_r($str, $len) {
-        echo "<pre>";
-        echo wordwrap(print_r($str), $len, "<br />\n");
-        echo "</pre>";
+        return "<pre>".print_r($str)."</pre>";
+    }
+
+    public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
+        return wordwrap($str, $len, $limiter, $cut);
     }
 
 }
