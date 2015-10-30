@@ -1,27 +1,22 @@
 # custom-twig-extension
 
 ## Content
-1. Features
+1. Introduction
 2. Requirements
 3. Installation
 4. Usage
 5. License
 
-## Features
-
-#### Functions
-1. Print_r with \<pre> tags
-2. Custom wordwrap
-
-#### Filters
-1. Json_decode filter
+## Introduction
+This repo contains my custom twig extension. In here you'll find a few native php functions added to twig as a twig extension.
+Things like creating a random number or using json_decode can now be done directly in Twig.
 
 ## Requirements
 - Twig ^1.22
 
 ## Installation
 #### Composer
-1. Require the repo
+1. Require the repo with composer
 ```composer require crecket/custom-twig-extension```
 2. Add the extension to the twig view 
 
@@ -31,22 +26,19 @@
 3. Add the extension to the twig view
 
 ## Usage
+Using these functions and filters is the same as the native functions and filters.
 
-
-- Print_r()
+Quick example:
+- print_r()
 ```
 {{ print_r(array) }}
 ``` 
-
 - json_decode
 ```
 {{ some_variable|json_decode }}
 ```
 
-- wordwrap()
-```
-{{ wordwrap('This is some text that will get cut off at 20 characters.', 20, "\n<br>", true) }}
-```
+## List
 
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
