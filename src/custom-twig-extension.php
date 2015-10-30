@@ -1,5 +1,5 @@
 <?php
-class Crecket_twig_extension extends Twig_Extension
+class custom_twig_extension extends Twig_Extension
 {
     public function getName(){
         return 'crecket_twig_extension';
@@ -17,8 +17,8 @@ class Crecket_twig_extension extends Twig_Extension
         );
     }
 
-    public function jsonDecode($str) {
-        return json_decode($str);
+    public function jsonDecode($str, $true) {
+        return json_decode($str, $true);
     }
 
     public function print_r($str, $len) {

@@ -33,6 +33,11 @@ Here I'll be adding my custom twig extensions
 
 ## Usage
 
+Using print_r
+
+```
+{{ print_r(array) }}
+``` 
 
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
