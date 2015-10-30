@@ -24,7 +24,9 @@ Here I'll be adding my custom twig extensions
 
 ## Installation
 #### Composer
+1. Require the repo
 ```composer require crecket/custom-twig-extension```
+2. Add the extension to the twig view 
 
 #### Manual
 1. Download the source
