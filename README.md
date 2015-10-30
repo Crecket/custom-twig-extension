@@ -1,14 +1,10 @@
 # custom-twig-extension
 
 ## Content
-1. Introduction
 2. Features
 3. Requirements
 4. Installation
 5. Usage
-
-## Introduction
-Here I'll be adding my custom twig extensions
 
 ## Features
 
