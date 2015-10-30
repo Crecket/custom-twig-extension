@@ -41,7 +41,7 @@ Here I'll be adding my custom twig extensions
 
 - json_decode() > Returns array
 ```
-{{ some_variable|json_decode(true) }}
+{{ some_variable|json_decode }}
 ```
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
