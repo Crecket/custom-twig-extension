@@ -4,10 +4,8 @@
 1. Introduction
 2. Features
 3. Requirements
-4. Examples
-5. Installation
-6. Todo
-7. License
+4. Installation
+5. Usage
 
 ## Introduction
 Here I'll be adding my custom twig extensions
@@ -19,8 +17,7 @@ Here I'll be adding my custom twig extensions
 1. Json_decode filter
 
 ## Requirements
-1. Php version >= 5.5
-2. PHPMailer 
+1. Twig ^1.22
 
 ## Installation
 #### Composer
@@ -33,6 +30,11 @@ Here I'll be adding my custom twig extensions
 
 ## Usage
 
+Print_r
+
+```
+{{ print_r(array) }}
+``` 
 
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
