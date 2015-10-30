@@ -36,17 +36,17 @@ Here I'll be adding my custom twig extensions
 ## Usage
 
 
-- Print_r
+- Print_r()
 ```
 {{ print_r(array) }}
 ``` 
 
-- json_decode() > Returns array
+- json_decode
 ```
 {{ some_variable|json_decode }}
 ```
 
-- wordwrap($string, $length, $limiter, $cut)
+- wordwrap()
 ```
 {{ wordwrap('This is some text that will get cut off at 20 characters.', 20, "\n<br>", true) }}
 ```
