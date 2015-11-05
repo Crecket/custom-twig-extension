@@ -39,7 +39,7 @@ class custom_twig_extension extends Twig_Extension{
     }
 
     public function print_r($str) {
-        return "<pre>".print_r($str)."</pre>";
+        return "<pre>".print_r($str, true)."</pre>";
     }
 
     public function pseudoBytes ($length = 32) {
