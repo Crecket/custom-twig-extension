@@ -38,7 +38,7 @@ class custom_twig_extension extends Twig_Extension{
         return phpinfo();
     }
 
-    public function print_r($str, $len) {
+    public function print_r($str) {
         return "<pre>".print_r($str)."</pre>";
     }
 
