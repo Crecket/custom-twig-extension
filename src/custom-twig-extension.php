@@ -20,6 +20,7 @@ class custom_twig_extension extends Twig_Extension{
             'randomHex' => new Twig_Function_Method($this, 'randomHex'),
             'randomInt' => new Twig_Function_Method($this, 'randomInt'),
             'randomString' => new Twig_Function_Method($this, 'randomString'),
+            'unsetSession' => new Twig_Function_Method($this, 'unsetSession'),
             'wordwrap' => new Twig_Function_Method($this, 'wordwrap', array(
                 'is_safe' => array('html')
             )),
@@ -89,6 +90,10 @@ class custom_twig_extension extends Twig_Extension{
         }
 
         return \implode($stringArr);
+    }
+
+    public function unsetSession($key){
+        unset($_SESSION[$key]);
     }
 
     public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
