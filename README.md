@@ -52,7 +52,10 @@ Quick example:
 9. wordwrap(string, length, limiter = "\n", cut)
 
 #### Filters
-1. json_decode
+1. json_decode  
+
+### Globals
+1. sessionVars   //Returns all php SESSION variables in array form
 
 ## License
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
