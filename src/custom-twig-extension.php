@@ -5,6 +5,7 @@ class custom_twig_extension extends Twig_Extension{
         return 'custom_twig_extension';
     }
 
+    // Functions
     public function getFunctions(){
         $funcHolder = array(
             'md5' => new Twig_Function_Method($this, 'md5'),
@@ -94,6 +95,7 @@ class custom_twig_extension extends Twig_Extension{
         return wordwrap($str, $len, $limiter, $cut);
     }
 
+    // Filters
     public function getFilters() {
         return array(
             'json_decode' => new Twig_Filter_Method($this, 'jsonDecode'),
@@ -105,5 +107,11 @@ class custom_twig_extension extends Twig_Extension{
         return json_decode($str, true);
     }
 
-
+    // Globals
+    public function getGlobals()
+    {
+        return array(
+            'sessionVars' => $_SESSION,
+        );
+    }
 }
