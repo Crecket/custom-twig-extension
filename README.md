@@ -49,7 +49,8 @@ Quick example:
 6. randomHex(length)
 7. randomInt(length)
 8. randomString(length)
-9. wordwrap(string, length, limiter = "\n", cut)
+9. unsetSession(key)
+10. wordwrap(string, length, limiter = "\n", cut)
 
 #### Filters
 1. json_decode  
