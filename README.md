@@ -1,5 +1,8 @@
 # custom-twig-extension
 
+[![Latest Stable Version](https://poser.pugx.org/crecket/custom-twig-extension/v/stable)](https://packagist.org/packages/crecket/custom-twig-extension)
+[![License](https://poser.pugx.org/crecket/custom-twig-extension/license)](https://packagist.org/packages/crecket/custom-twig-extension)
+
 ## Content
 1. Introduction
 2. Requirements
