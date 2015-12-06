@@ -93,9 +93,7 @@ class custom_twig_extension extends Twig_Extension{
     }
 
     public function unsetSession($key){
-        if(isset($_SESSION[$key])){
-            unset($_SESSION[$key]);
-        }
+        unset($_SESSION[$key]);
     }
 
     public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
