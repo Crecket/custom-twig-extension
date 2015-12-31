@@ -13,8 +13,8 @@
         "twig/twig": "^1.22"
     },
     "autoload": {
-        "classmap": [
-            "src/custom-twig-extension.php"
-        ]
+        "psr-4": {
+            "Crecket\\": "src/"
+        }
     }
 }

@@ -1,4 +1,7 @@
 <?php
+
+namespace Crecket;
+
 class custom_twig_extension extends Twig_Extension{
 
     public function getName(){
