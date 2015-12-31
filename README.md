@@ -1,7 +1,7 @@
 # custom-twig-extension
 
-[![Packagist](https://img.shields.io/packagist/v/symfony/symfony.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
+[![Packagist](https://img.shields.io/packagist/v/crecket/custom-twig-extension.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
+[![Packagist](https://img.shields.io/packagist/l/crecket/custom-twig-extension.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
 
 ## Content
 1. Introduction
