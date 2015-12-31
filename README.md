@@ -1,6 +1,6 @@
 # custom-twig-extension
 
-[![Packagist](https://img.shields.io/packagist/v/crecket/custom-twig-extension.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
+[![GitHub release](https://img.shields.io/github/release/crecket/custom-twig-extension.svg)](https://github.com/Crecket/custom-twig-extension)
 [![Packagist](https://img.shields.io/packagist/l/crecket/custom-twig-extension.svg)](https://packagist.org/packages/crecket/custom-twig-extension)
 
 ## Content
