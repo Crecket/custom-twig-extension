@@ -2,7 +2,7 @@
 
 namespace Crecket;
 
-class custom_twig_extension extends Twig_Extension{
+class custom_twig_extension extends \Twig_Extension{
 
     public function getName(){
         return 'custom_twig_extension';
@@ -11,20 +11,20 @@ class custom_twig_extension extends Twig_Extension{
     // Functions
     public function getFunctions(){
         $funcHolder = array(
-            'md5' => new Twig_Function_Method($this, 'md5'),
-            'password_hash' => new Twig_Function_Method($this, 'password_hash'),
-            'phpinfo' => new Twig_Function_Method($this, 'phpinfo', array(
+            'md5' => new \Twig_Function_Method($this, 'md5'),
+            'password_hash' => new \Twig_Function_Method($this, 'password_hash'),
+            'phpinfo' => new \Twig_Function_Method($this, 'phpinfo', array(
                 'is_safe' => array('html')
             )),
-            'print_r' => new Twig_Function_Method($this, 'print_r', array(
+            'print_r' => new \Twig_Function_Method($this, 'print_r', array(
                 'is_safe' => array('html')
             )),
-            'pseudoBytes' => new Twig_Function_Method($this, 'pseudoBytes'),
-            'randomHex' => new Twig_Function_Method($this, 'randomHex'),
-            'randomInt' => new Twig_Function_Method($this, 'randomInt'),
-            'randomString' => new Twig_Function_Method($this, 'randomString'),
-            'unsetSession' => new Twig_Function_Method($this, 'unsetSession'),
-            'wordwrap' => new Twig_Function_Method($this, 'wordwrap', array(
+            'pseudoBytes' => new \Twig_Function_Method($this, 'pseudoBytes'),
+            'randomHex' => new \Twig_Function_Method($this, 'randomHex'),
+            'randomInt' => new \Twig_Function_Method($this, 'randomInt'),
+            'randomString' => new \Twig_Function_Method($this, 'randomString'),
+            'unsetSession' => new \Twig_Function_Method($this, 'unsetSession'),
+            'wordwrap' => new \Twig_Function_Method($this, 'wordwrap', array(
                 'is_safe' => array('html')
             )),
         );
@@ -106,7 +106,7 @@ class custom_twig_extension extends Twig_Extension{
     // Filters
     public function getFilters() {
         return array(
-            'json_decode' => new Twig_Filter_Method($this, 'jsonDecode'),
+            'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
 
         );
     }
