@@ -44,6 +44,7 @@ Quick example:
 ## List
 
 #### Functions
+1. dumpPre(var1, var2, var3 ...)
 1. md5(password)
 2. password_hash(password)
 3. phpinfo()
