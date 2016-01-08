@@ -4,6 +4,24 @@ namespace Crecket;
 
 class custom_twig_extension extends \Twig_Extension{
 
+    function dumpPre(){
+        $backtrace = debug_backtrace();
+        $vars = func_get_args();
+        $message = "";
+        $message .= "<br>Line: " . $backtrace[0]['line'];
+        $message .= "<br>File: " . $backtrace[0]['file'];
+        $message .= "<br>===========================================";
+        foreach ($vars as $key => $var) {
+            $message .= "<br>Argument: " . ($key + 1);
+            $message .= "<pre>";
+            $message .= print_r($var);
+            $message .= "</pre>";
+            $message .= "<br>===========================================";
+        }
+        return $message;
+    }
+
+
     public function getName(){
         return 'custom_twig_extension';
     }
