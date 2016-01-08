@@ -29,6 +29,7 @@ class custom_twig_extension extends \Twig_Extension{
     // Functions
     public function getFunctions(){
         $funcHolder = array(
+            'dumpPre' => new \Twig_Function_method($this, 'dumpPre'),
             'md5' => new \Twig_Function_Method($this, 'md5'),
             'password_hash' => new \Twig_Function_Method($this, 'password_hash'),
             'phpinfo' => new \Twig_Function_Method($this, 'phpinfo', array(
