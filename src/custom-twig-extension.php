@@ -7,18 +7,17 @@ class custom_twig_extension extends \Twig_Extension{
     function dumpPre(){
         $backtrace = debug_backtrace();
         $vars = func_get_args();
-        $message = "";
-        $message .= "<br>Line: " . $backtrace[0]['line'];
-        $message .= "<br>File: " . $backtrace[0]['file'];
-        $message .= "<br>===========================================";
+        echo "<br>Line: " . $backtrace[0]['line'];
+        echo "<br>File: " . $backtrace[0]['file'];
+        echo  "<br>===========================================";
         foreach ($vars as $key => $var) {
-            $message .= "<br>Argument: " . ($key + 1);
-            $message .= "<pre>";
-            $message .= print_r($var);
-            $message .= "</pre>";
-            $message .= "<br>===========================================";
+            echo "<br>Argument: " . ($key + 1);
+            echo "<pre>";
+            echo print_r($var);
+            echo "</pre>";
+            echo "<br>===========================================";
         }
-        return $message;
+        return;
     }
 
 
