@@ -1,15 +1,16 @@
 <?php
 
-namespace Crecket;
 
-class custom_twig_extension extends \Twig_Extension{
+class custom_twig_extension extends Twig_Extension
+{
 
-    function dumpPre(){
+    function dumpPre()
+    {
         $backtrace = debug_backtrace();
         $vars = func_get_args();
         echo "<br>Line: " . $backtrace[0]['line'];
         echo "<br>File: " . $backtrace[0]['file'];
-        echo  "<br>===========================================";
+        echo "<br>===========================================";
         foreach ($vars as $key => $var) {
             echo "<br>Argument: " . ($key + 1);
             echo "<pre>";
@@ -21,51 +22,58 @@ class custom_twig_extension extends \Twig_Extension{
     }
 
 
-    public function getName(){
+    public function getName()
+    {
         return 'custom_twig_extension';
     }
 
     // Functions
-    public function getFunctions(){
-        $funcHolder = array(
-            'dumpPre' => new \Twig_Function_method($this, 'dumpPre'),
-            'md5' => new \Twig_Function_Method($this, 'md5'),
-            'password_hash' => new \Twig_Function_Method($this, 'password_hash'),
-            'phpinfo' => new \Twig_Function_Method($this, 'phpinfo', array(
+
+    public function getFunctions()
+    {
+        return array(
+            new Twig_SimpleFunction('dumpPre', "dumpPre"),
+            new Twig_SimpleFunction('md5', "md5"),
+            new Twig_SimpleFunction('phpinfo', "phpinfo", array(
                 'is_safe' => array('html')
             )),
-            'print_r' => new \Twig_Function_Method($this, 'print_r', array(
+            new Twig_SimpleFunction('print_r', "print_r", array(
                 'is_safe' => array('html')
             )),
-            'pseudoBytes' => new \Twig_Function_Method($this, 'pseudoBytes'),
-            'randomHex' => new \Twig_Function_Method($this, 'randomHex'),
-            'randomInt' => new \Twig_Function_Method($this, 'randomInt'),
-            'randomString' => new \Twig_Function_Method($this, 'randomString'),
-            'unsetSession' => new \Twig_Function_Method($this, 'unsetSession'),
-            'wordwrap' => new \Twig_Function_Method($this, 'wordwrap', array(
+            new Twig_SimpleFunction('pseudoBytes', "pseudoBytes"),
+            new Twig_SimpleFunction('randomHex', "randomHex"),
+            new Twig_SimpleFunction('randomInt', "randomInt"),
+            new Twig_SimpleFunction('randomString', "randomString"),
+            new Twig_SimpleFunction('unsetSession', "unsetSession"),
+            new Twig_SimpleFunction('wordwrap', "wordwrap", array(
                 'is_safe' => array('html')
             )),
         );
-        return $funcHolder;
     }
 
-    public function md5($str) {
+
+    public function md5($str)
+    {
         return md5($str);
     }
 
-    public function password_hash($password) {
+    public function password_hash($password)
+    {
         return password_hash(base64_encode(hash('sha256', $password, true)), PASSWORD_DEFAULT);
     }
 
-    public function phpinfo() {
+    public function phpinfo()
+    {
         return phpinfo();
     }
 
-    public function print_r($str) {
-        return "<pre>".print_r($str, true)."</pre>";
+    public function print_r($str)
+    {
+        return "<pre>" . print_r($str, true) . "</pre>";
     }
 
-    public function pseudoBytes ($length = 32) {
+    public function pseudoBytes($length = 32)
+    {
         $bytes = openssl_random_pseudo_bytes($length, $strong);
         if ($strong === TRUE) {
             return $bytes;
@@ -74,13 +82,15 @@ class custom_twig_extension extends \Twig_Extension{
         }
     }
 
-    public function randomHex ($length = 32) {
-        $bytes = \ceil($length/2);
+    public function randomHex($length = 32)
+    {
+        $bytes = \ceil($length / 2);
         $hex = \bin2hex($this->pseudoBytes($bytes));
         return $hex;
     }
 
-    public function randomInt ($min = 0, $max = 2147483647) {
+    public function randomInt($min = 0, $max = 2147483647)
+    {
         if ($max <= $min) {
             throw new \Exception('Minimum equal or greater than maximum!');
         }
@@ -88,8 +98,8 @@ class custom_twig_extension extends \Twig_Extension{
             throw new \Exception('Only positive integers supported for now!');
         }
         $difference = $max - $min;
-        for ($power = 8; \pow(2, $power) < $difference; $power = $power*2);
-        $powerExp = $power/8;
+        for ($power = 8; \pow(2, $power) < $difference; $power = $power * 2) ;
+        $powerExp = $power / 8;
 
         do {
             $randDiff = \hexdec(\bin2hex($this->pseudoBytes($powerExp)));
@@ -98,7 +108,8 @@ class custom_twig_extension extends \Twig_Extension{
         return $min + $randDiff;
     }
 
-    public function randomString ($length = 32) {
+    public function randomString($length = 32)
+    {
 
         $charactersArr = \array_merge(\range('a', 'z'), \range('A', 'Z'), \range('0', '9'));
 
@@ -107,33 +118,38 @@ class custom_twig_extension extends \Twig_Extension{
         $stringArr = array();
 
         for ($character = 0; $character !== $length; $character++) {
-            $stringArr[$character] = $charactersArr[$this->randomInt(0, $charactersCount-1)];
+            $stringArr[$character] = $charactersArr[$this->randomInt(0, $charactersCount - 1)];
         }
 
         return \implode($stringArr);
     }
 
-    public function unsetSession($key){
+    public function unsetSession($key)
+    {
         unset($_SESSION[$key]);
     }
 
-    public function wordwrap($str, $len, $limiter = "\n", $cut = false) {
+    public function wordwrap($str, $len, $limiter = "\n", $cut = false)
+    {
         return wordwrap($str, $len, $limiter, $cut);
     }
 
     // Filters
-    public function getFilters() {
+    public function getFilters()
+    {
         return array(
-            'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
-            'urlDecode' => new \Twig_Filter_Method($this, 'urlDecode'),
+            new Twig_SimpleFilter('jsonDecode', "jsonDecode"),
+            new Twig_SimpleFilter('urlDecode', "urlDecode"),
         );
     }
 
-    public function jsonDecode($str) {
+    public function jsonDecode($str)
+    {
         return json_decode($str, true);
     }
 
-    public function urlDecode($url){
+    public function urlDecode($url)
+    {
         return urldecode($url);
     }
 
