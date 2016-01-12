@@ -10,10 +10,10 @@
     }
   ],
   "require": {
-    "twig/twig": "^1.23"
+    "twig/twig": "<1.23.0"
   },
   "autoload": {
-    "files": [
+    "classmap": [
       "src/custom-twig-extension.php"
     ]
   }
