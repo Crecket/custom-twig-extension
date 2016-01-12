@@ -125,12 +125,16 @@ class custom_twig_extension extends \Twig_Extension{
     public function getFilters() {
         return array(
             'json_decode' => new \Twig_Filter_Method($this, 'jsonDecode'),
-
+            'urlDecode' => new \Twig_Filter_Method($this, 'urlDecode'),
         );
     }
 
     public function jsonDecode($str) {
         return json_decode($str, true);
+    }
+
+    public function urlDecode($url){
+        return urldecode($url);
     }
 
     // Globals

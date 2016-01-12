@@ -15,7 +15,7 @@ This repo contains my custom twig extension. In here you'll find a few native ph
 Things like creating a random number or using json_decode can now be done directly in Twig.
 
 ## Requirements
-- Twig ^1.22
+- Twig ^1.25
 
 ## Installation
 #### Composer
@@ -58,6 +58,7 @@ Quick example:
 
 #### Filters
 1. json_decode  
+2. urlDecode  
 
 ### Globals
 1. sessionVars   //Returns all php SESSION variables in array form
