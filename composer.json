@@ -1,20 +1,20 @@
 {
-    "name": "crecket/custom-twig-extension",
-    "description": "My custom twig extension",
-    "license": "WTFPL",
-    "homepage": "https://github.com/Crecket/custom-twig-extension",
-    "authors": [
-        {
-            "name": "Gregory Goijaerts",
-            "email": "crecketgaming@gmail.com"
-        }
-    ],
-    "require": {
-        "twig/twig": "^1.25"
-    },
-    "autoload": {
-        "psr-4": {
-            "Crecket\\": "src/"
-        }
+  "name": "crecket/custom-twig-extension",
+  "description": "My custom twig extension",
+  "license": "WTFPL",
+  "homepage": "https://github.com/Crecket/custom-twig-extension",
+  "authors": [
+    {
+      "name": "Gregory Goijaerts",
+      "email": "crecketgaming@gmail.com"
     }
+  ],
+  "require": {
+    "twig/twig": "^1.23"
+  },
+  "autoload": {
+    "files": [
+      "src/custom-twig-extension.php"
+    ]
+  }
 }
