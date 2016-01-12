@@ -21,7 +21,11 @@ Things like creating a random number or using json_decode can now be done direct
 #### Composer
 1. Require the repo with composer
 ```composer require crecket/custom-twig-extension```
-2. Add the extension to the twig view 
+2. Add the extension to the twig view (custom_twig_extension is the class)
+```
+$twig = new Twig_Environment();
+$twig->addExtension(new custom_twig_extension());
+```
 
 #### Manual
 1. Download the source
