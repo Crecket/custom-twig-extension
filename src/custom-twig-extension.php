@@ -32,20 +32,20 @@ class custom_twig_extension extends Twig_Extension
     public function getFunctions()
     {
         return array(
-            new Twig_SimpleFunction('dumpPre', "dumpPre"),
+            new Twig_SimpleFunction('dumpPre', array($this, 'dumpPre')),
             new Twig_SimpleFunction('md5', "md5"),
-            new Twig_SimpleFunction('phpinfo', "phpinfo", array(
+            new Twig_SimpleFunction('phpinfo', 'phpinfo', array(
                 'is_safe' => array('html')
             )),
-            new Twig_SimpleFunction('print_r', "print_r", array(
+            new Twig_SimpleFunction('print_r', array($this, 'print_r'), array(
                 'is_safe' => array('html')
             )),
-            new Twig_SimpleFunction('pseudoBytes', "pseudoBytes"),
-            new Twig_SimpleFunction('randomHex', "randomHex"),
-            new Twig_SimpleFunction('randomInt', "randomInt"),
-            new Twig_SimpleFunction('randomString', "randomString"),
-            new Twig_SimpleFunction('unsetSession', "unsetSession"),
-            new Twig_SimpleFunction('wordwrap', "wordwrap", array(
+            new Twig_SimpleFunction('pseudoBytes', array($this, 'pseudoBytes')),
+            new Twig_SimpleFunction('randomHex', array($this, 'randomHex')),
+            new Twig_SimpleFunction('randomInt', array($this, 'randomInt')),
+            new Twig_SimpleFunction('randomString', array($this, 'randomString')),
+            new Twig_SimpleFunction('unsetSession', array($this, 'unsetSession')),
+            new Twig_SimpleFunction('wordwrap', array($this, 'wordwrap'), array(
                 'is_safe' => array('html')
             )),
         );
