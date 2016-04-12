@@ -14,7 +14,7 @@ class custom_twig_extension extends Twig_Extension
         foreach ($vars as $key => $var) {
             echo "<br>Argument: " . ($key + 1);
             echo "<pre>";
-            echo print_r($var);
+            print_r($var);
             echo "</pre>";
             echo "<br>===========================================";
         }
