@@ -138,8 +138,8 @@ class custom_twig_extension extends Twig_Extension
     public function getFilters()
     {
         return array(
-            new Twig_SimpleFilter('jsonDecode', "jsonDecode"),
-            new Twig_SimpleFilter('urlDecode', "urlDecode"),
+            new Twig_SimpleFilter('jsonDecode', array($this, "jsonDecode")),
+            new Twig_SimpleFilter('urlDecode', array($this, "urlDecode")),
         );
     }
 
