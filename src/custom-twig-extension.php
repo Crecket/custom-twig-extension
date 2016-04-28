@@ -32,6 +32,9 @@ class custom_twig_extension extends Twig_Extension
     public function getFunctions()
     {
         return array(
+            new Twig_SimpleFunction('ahref', array($this, 'ahref'), array(
+                'is_safe' => array('html')
+            )),
             new Twig_SimpleFunction('dumpPre', array($this, 'dumpPre')),
             new Twig_SimpleFunction('md5', "md5"),
             new Twig_SimpleFunction('phpinfo', 'phpinfo', array(
@@ -60,6 +63,11 @@ class custom_twig_extension extends Twig_Extension
     public function password_hash($password)
     {
         return password_hash(base64_encode(hash('sha256', $password, true)), PASSWORD_DEFAULT);
+    }
+
+    public function ahref($text, $href, $target = "_blank")
+    {
+        return "<a href='" . $href . "' target='" . $target . "'>" . $text . "</a>";
     }
 
     public function phpinfo()
